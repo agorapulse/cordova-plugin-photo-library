@@ -7,6 +7,9 @@
     <js-module src="www/async/dist/async.min.js" name="async" />
     <js-module src="www/async/dist/async.min.map" name="async_map" />
     <platform name="android">
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:requestLegacyExternalStorage="true" />
+        </edit-config>
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="PhotoLibrary" >
                 <param name="android-package" value="com.terikon.cordova.photolibrary.PhotoLibrary"/>
